@@ -1,7 +1,7 @@
 require 'nokogiri'
 require 'data_mapper'
 
-task :db => :environment do
+task :db do
   #require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
 
   url = "http://sfbay.craigslist.org/cto/"
@@ -35,22 +35,21 @@ task :db => :environment do
         images = ""
         img = ""
 
-        puts "soemthing"
         if str[1].respond_to?(:split)
           images = str[1].split(/"(.*?)"/)
           img =  images[1].strip
           #puts img 
         end
-          #p = Product.new
-          #p.title = title
-          #p.description = description
-         # p.link = item_link
-         # p.price = price
-         # p.location = location
-         # p.img = img
-         # p.created_at = Time.now
-         # p.updated_at = Time.now
-         # p.save
+          p = Product.new
+          p.title = title
+          p.description = description
+          p.link = item_link
+          p.price = price
+          p.location = location
+          p.img = img
+          p.created_at = Time.now
+          p.updated_at = Time.now
+          p.save
         end
     end
 end
