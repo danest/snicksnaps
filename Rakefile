@@ -1,5 +1,5 @@
 task :environment do
-  require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
+  #require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
 
   url = "http://sfbay.craigslist.org/cto/"
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
