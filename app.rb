@@ -57,7 +57,7 @@ get '/makeitems' do
         # the comment with the images is int [1]
         str = str.split(/\<![ \r\n\t]*(--([^\-]|[\r\n]|-[^\-])*--[ \r\n\t]*)\>/)
 
-        #puts description = str[0].strip
+        description = str[0].strip
 
         images = ""
         img = ""
