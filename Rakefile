@@ -1,7 +1,26 @@
-
+require 'sinatra'
+require 'data_mapper'
+require 'json'
+require 'nokogiri'
+require 'open-uri'
 task :fetch_travel => :environment do
-	require 'nokogiri'
-	require 'open-uri'
+	
+DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite:///#{Dir.pwd}/pinn.db")
+
+class Product
+  include DataMapper::Resource
+  property :id, Serial
+  property :title, Text, :unique => true
+  property :link, Text, :required => true
+  property :description, Text, :required => true
+  property :img, Text, :required => true
+  property :price, Text, :required => true
+  property :location, Text, :required => true
+  property :created_at, DateTime  
+  property :updated_at, DateTime  
+end
+
+DataMapper.finalize.auto_upgrade!
   #require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
   url = "http://sfbay.craigslist.org/cto/"
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
