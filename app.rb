@@ -26,7 +26,7 @@ DataMapper.finalize.auto_upgrade!
 
 
 get '/' do
-  @products = Product.paginate(:page => params[:page], :per_page => 30)
+  @products = Product.all(:order => [:created_at.desc]).paginate(:page => params[:page], :per_page => 30)
   erb :index
 end
 

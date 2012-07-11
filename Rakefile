@@ -3,8 +3,8 @@ require 'data_mapper'
 require 'json'
 require 'nokogiri'
 require 'open-uri'
-task :fetch_travel => :environment do
-	
+task :fetch => :environment do
+
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite:///#{Dir.pwd}/pinn.db")
 
 class Product
