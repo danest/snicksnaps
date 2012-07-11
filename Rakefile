@@ -1,3 +1,6 @@
+require 'nokogiri'
+require 'data_mapper'
+
 task :db => :environment do
   #require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
 
