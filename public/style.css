@@ -16,11 +16,8 @@ body {
 	text-indent: -9999px;
 	background: url('logo.png') no-repeat;
 	display: block;
-	height: 55px;
+	height: 47px;
 	width:260px;
-	top: 10px;
-	left: 10px;
-	position: absolute;
 }
 
 img{
@@ -108,4 +105,137 @@ h1{
 }
 .clear{
 	clear:both;
+}
+
+
+a {
+	color: #333;
+}
+#nav {
+	background: #7d7d7d url(ddmenu.png) no-repeat;
+	line-height: 100%;
+	width: 234px;
+	height: 30px;
+}
+#nav li {
+	margin: 0 5px;
+	padding: 0 0 8px;
+	float: left;
+	position: relative;
+	list-style: none;
+	width: 224px;
+}
+
+
+/* main level link */
+#nav a {
+	font-weight: bold;
+	color: #e7e5e5;
+	text-decoration: none;
+	display: block;
+	padding:  8px 20px;
+	margin: 0;
+
+	-webkit-border-radius: 1.6em;
+	-moz-border-radius: 1.6em;
+	
+}
+#nav a:hover {
+	color: #fff;
+}
+
+
+/* sub levels link hover */
+#nav ul li:hover a {
+	color: #fff;
+	background: #a49488;
+
+}
+
+#nav li:hover li a {
+
+}
+#nav ul a:hover {
+	color: #fff !important;
+	background: #a49488;
+	-webkit-border-radius: 0;
+	-moz-border-radius: 0;
+
+}
+
+/* dropdown */
+#nav li:hover > ul {
+	display: block;
+}
+
+/* level 2 list */
+#nav ul {
+	display: none;
+	margin: 0;
+	padding: 0;
+	width: 224px;
+	position: absolute;
+	left: 0;
+	background: #857264;
+	border: solid 1px #42322a;
+
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	border-radius: 10px;
+
+	-webkit-box-shadow: 0 1px 3px rgba(0,0,0, .3);
+	-moz-box-shadow: 0 1px 3px rgba(0,0,0, .3);
+	box-shadow: 0 1px 3px rgba(0,0,0, .3);
+}
+#nav ul li {
+	float: none;
+	margin: 0;
+	padding: 0;
+}
+
+#nav ul a {
+	font-weight: normal;
+}
+
+
+/* rounded corners of first and last link */
+#nav ul li:first-child > a {
+	-webkit-border-top-left-radius: 9px;
+	-moz-border-radius-topleft: 9px;
+
+	-webkit-border-top-right-radius: 9px;
+	-moz-border-radius-topright: 9px;
+}
+#nav ul li:last-child > a {
+	-webkit-border-bottom-left-radius: 9px;
+	-moz-border-radius-bottomleft: 9px;
+
+	-webkit-border-bottom-right-radius: 9px;
+	-moz-border-radius-bottomright: 9px;
+}
+
+/* clearfix */
+#nav:after {
+	content: ".";
+	display: block;
+	clear: both;
+	visibility: hidden;
+	line-height: 0;
+	height: 0;
+}
+#nav {
+	display: inline-block;
+	margin-top: 10px;
+	float: right;
+} 
+
+#logodiv{
+	float: left;
+	margin-top: 5px;
+}
+
+#say{
+	float: left;
+	font-size:15px;
+	z-index: 10;
 }

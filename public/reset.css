@@ -157,6 +157,10 @@ button {  width: auto; overflow: visible; }
 	width: 1024px;
 	margin-top: 30px;
 }
+#hcont{
+	margin: 0 auto;
+	width: 1024px;
+}
 
 header {
 	text-align: center;
