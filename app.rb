@@ -23,7 +23,7 @@ class Product
   property :updated_at, DateTime  
 end
 
-DataMapper.finalize.auto_migrate!
+DataMapper.finalize.auto_upgrade!
 
 
 get '/' do
