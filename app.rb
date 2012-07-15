@@ -23,11 +23,21 @@ class Product
   property :updated_at, DateTime  
 end
 
-DataMapper.finalize.auto_upgrade!
+DataMapper.finalize.auto_migrate!
 
 
 get '/' do
-  @products = Product.all(:order => [:created_at.desc]).paginate(:page => params[:page], :per_page => 30)
+  @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "cars"}).paginate(:page => params[:page], :per_page => 30)
+  erb :index
+end
+
+get '/freebies' do
+  @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "freebies"}).paginate(:page => params[:page], :per_page => 30)
+  erb :freebies
+end
+
+get '/electronics' do
+  @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "electronics"}).paginate(:page => params[:page], :per_page => 30)
   erb :index
 end
 
@@ -37,11 +47,13 @@ get '/makeitems/:cat' do
   elsif params[:cat] == "electronics"
     url = "http://sfbay.craigslist.org/ela/"
   elsif params[:cat] == "freebies"
+    puts "here"
     url = "http://sfbay.craigslist.org/zip/"
   else
     redirect '/'
   end
 
+ # puts url
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
   doc.css(".row").each do |item| 
@@ -56,6 +68,9 @@ get '/makeitems/:cat' do
         item_link = link[0]["href"].strip
 
         price = item.css('.itempp')[0].text.strip
+        if price == ""
+          price = "FREE"
+        end
         #puts price
         location = item.css('.itempn')[0].text.strip
         #puts location
@@ -77,6 +92,7 @@ get '/makeitems/:cat' do
           img =  images[1].strip
           #puts img 
         end
+
           p = Product.new
           p.title = title
           p.description = description
@@ -88,6 +104,9 @@ get '/makeitems/:cat' do
           p.created_at = Time.now
           p.updated_at = Time.now
           p.save
+            #p.errors.each do |error|
+             # puts error
+            #end
         end
     end
  
