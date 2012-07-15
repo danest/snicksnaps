@@ -75,7 +75,7 @@ get '/makeitems/:cat' do
         location = item.css('.itempn')[0].text.strip
         #puts location
         url = "#{item_link}"
-        #sleep 2
+        sleep 1
         doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
         str =  doc.css('#userbody')[0].text
