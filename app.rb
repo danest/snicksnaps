@@ -15,6 +15,7 @@ class Product
   property :title, Text, :unique => true
   property :link, Text, :required => true
   property :description, Text, :required => true
+  property :category, Text, :required => true
   property :img, Text, :required => true
   property :price, Text, :required => true
   property :location, Text, :required => true
@@ -30,8 +31,17 @@ get '/' do
   erb :index
 end
 
-get '/makeitems' do
-  url = "http://sfbay.craigslist.org/cto/"
+get '/makeitems/:cat' do
+  if params[:cat] == "cars"
+    url = "http://sfbay.craigslist.org/cto/"
+  elsif params[:cat] == "electronics"
+    url = "http://sfbay.craigslist.org/ela/"
+  elsif params[:cat] == "freebies"
+    url = "http://sfbay.craigslist.org/zip/"
+  else
+    redirect '/'
+  end
+
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
   doc.css(".row").each do |item| 
@@ -70,6 +80,7 @@ get '/makeitems' do
           p = Product.new
           p.title = title
           p.description = description
+          p.category = params[:cat]
           p.link = item_link
           p.price = price
           p.location = location

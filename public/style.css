@@ -20,6 +20,11 @@ body {
 	width:260px;
 }
 
+#logo:active{
+	position: relative;
+	top: 1px;
+}
+
 img{
 	-moz-border-radius: 10px 10px 0 0;
 	-webkit-border-radius: 10px 10px 0 0;
@@ -250,4 +255,9 @@ a {
 	float: left;
 	font-size:15px;
 	z-index: 10;
+}
+#social{
+	float: left;
+	margin-left: 50px;
+	margin-top: 30px;
 }

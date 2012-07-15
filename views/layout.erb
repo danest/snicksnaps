@@ -16,6 +16,10 @@
           <a href="/" title="SnickSnap" id="logo">SnickSnap</a>
            <h1 id="say">The best way to browse Craigslist</h1>
     </div>
+    <div id="social">
+        <a href="https://twitter.com/share" class="twitter-share-button" data-via="danest">Tweet</a>
+      <div class="fb-like" data-send="true" data-layout="button_count" data-width="130" data-show-faces="false" data-font="arial"></div>
+    </div>
       <ul id="nav">
         <li><a href="#">Categories</a>
           <ul>
@@ -35,6 +39,15 @@
   </div>
 
   <footer>
+    <div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=207998685896226";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
   </footer>
 </body>
 </html>
