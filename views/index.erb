@@ -1,4 +1,5 @@
 	<% @products.each do |product| %>
+		<a href="<%= product.link %>" title="<%= product.title[0..13]+ "..." %>">
 		<div class="item">
 			<div class="image">
 				<%= image_tag product.img, :alt => @title, :title => @title , :width => "280px", :heightt => "210px" %>
@@ -13,5 +14,6 @@
 				</div><div class="clear"></div>
 			</div><div class="clear"></div>
 		</div>
+		</a>
 	<% end %>
 	<%= will_paginate @products, :page_links => false  %>

@@ -33,7 +33,7 @@ end
 
 get '/freebies' do
   @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "freebies"}).paginate(:page => params[:page], :per_page => 30)
-  erb :freebies
+  erb :index
 end
 
 get '/electronics' do
