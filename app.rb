@@ -19,8 +19,8 @@ class Product
   property :img, Text, :required => true
   property :price, Text, :required => true
   property :location, Text, :required => true
-  property :created_at, DateTime  
-  property :updated_at, DateTime  
+  property :created_at, DateTime
+  property :updated_at, DateTime
 end
 
 DataMapper.finalize.auto_upgrade!
@@ -56,7 +56,7 @@ get '/makeitems/:cat' do
  # puts url
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
-  doc.css(".row").each do |item| 
+  doc.css(".row").each do |item|
   #puts item.at_css('')
   #links =  item.css("a")
   #puts links[0].text
@@ -90,7 +90,7 @@ get '/makeitems/:cat' do
         if str[1].respond_to?(:split)
           images = str[1].split(/"(.*?)"/)
           img =  images[1].strip
-          #puts img 
+          #puts img
         end
 
           p = Product.new
@@ -109,6 +109,6 @@ get '/makeitems/:cat' do
             #end
         end
     end
- 
+
   redirect '/'
 end

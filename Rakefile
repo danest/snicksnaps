@@ -3,7 +3,7 @@ require 'data_mapper'
 require 'json'
 require 'nokogiri'
 require 'open-uri'
-task :fetch => :environment do
+task :fetch do
 
 DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite:///#{Dir.pwd}/pinn.db")
 
@@ -13,19 +13,21 @@ class Product
   property :title, Text, :unique => true
   property :link, Text, :required => true
   property :description, Text, :required => true
+  property :category, Text, :required => true
   property :img, Text, :required => true
   property :price, Text, :required => true
   property :location, Text, :required => true
-  property :created_at, DateTime  
-  property :updated_at, DateTime  
+  property :created_at, DateTime
+  property :updated_at, DateTime
 end
 
 DataMapper.finalize.auto_upgrade!
   #require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
   url = "http://sfbay.craigslist.org/cto/"
+  cat = "cars"
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
-  doc.css(".row").each do |item| 
+  doc.css(".row").each do |item|
   #puts item.at_css('')
   #links =  item.css("a")
   #puts links[0].text
@@ -56,11 +58,12 @@ DataMapper.finalize.auto_upgrade!
         if str[1].respond_to?(:split)
           images = str[1].split(/"(.*?)"/)
           img =  images[1].strip
-          #puts img 
+          #puts img
         end
           p = Product.new
           p.title = title
           p.description = description
+          p.category = cat
           p.link = item_link
           p.price = price
           p.location = location
