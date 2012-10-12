@@ -73,4 +73,5 @@ DataMapper.finalize.auto_upgrade!
           p.save
         end
     end
+    puts "finished rake task"
 end
