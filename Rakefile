@@ -22,9 +22,18 @@ class Product
 end
 
 DataMapper.finalize.auto_upgrade!
-  #require File.expand_path(File.join(*%w[ config environment ]), File.dirname(__FILE__))
-  url = "http://sfbay.craigslist.org/cto/"
-  cat = "cars"
+
+def run_scrapper(category)
+  puts Time.now.getutc
+  if category == "cars"
+    url = "http://sfbay.craigslist.org/cto/"
+  elsif category == "electronics"
+    url = "http://sfbay.craigslist.org/ela/"
+  elsif category == "freebies"
+    url = "http://sfbay.craigslist.org/zip/"
+  else
+    puts "error not running SCRAPPER"
+  end
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
   doc.css(".row").each do |item|
@@ -63,7 +72,7 @@ DataMapper.finalize.auto_upgrade!
           p = Product.new
           p.title = title
           p.description = description
-          p.category = cat
+          p.category = category
           p.link = item_link
           p.price = price
           p.location = location
@@ -73,5 +82,13 @@ DataMapper.finalize.auto_upgrade!
           p.save
         end
     end
-    puts "finished rake task"
+  end
+  run_scrapper("cars")
+  puts "CARS SCRAPPER"
+  run_scrapper("electronics")
+  puts "ELECTORNICS SCRAPPER"
+  run_scrapper("freebies")
+  puts "FREEBIES SCRAPPER"
+  puts "finished rake task"
+  puts Time.now.getutc
 end
