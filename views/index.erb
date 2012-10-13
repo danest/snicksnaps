@@ -1,4 +1,5 @@
 	<% @products.each do |product| %>
+		<a href="<%= product.link %>" title="<%= product.title%>">
 		<div class="item">
 			<div class="image">
 				<%= image_tag product.img, :alt => @title, :title => @title , :width => "265px", :height => "180px" %>
