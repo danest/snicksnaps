@@ -1,19 +1,23 @@
 	<% @products.each do |product| %>
-		<a href="<%= product.link %>" title="<%= product.title[0..13]+ "..." %>">
+		<a href="<%= product.link %>" title="<%= product.title[0..19]+ "..." %>">
 		<div class="item">
 			<div class="image">
-				<%= image_tag product.img, :alt => @title, :title => @title , :width => "280px", :heightt => "210px" %>
-			</div>			
+				<%= image_tag product.img, :alt => @title, :title => @title , :width => "265px", :height => "180px" %>
+			</div>
 			<div class="item-bottom">
 				<div class="price">
 					<%= product.price %>
 				</div>
 				<div class="info">
-					<a href="<%= product.link %>" title="<%= product.title[0..13]+ "..." %>"><%= product.title[0..13]+ "..." %></a>				
+					<a href="<%= product.link %>" title="<%= product.title[0..13]+ "..." %>"><%= product.title[0..13]+ "..." %></a>
 					<p class="location"><%= product.location[0..15] %></p>
-				</div><div class="clear"></div>
-			</div><div class="clear"></div>
+				</div>
+				<div class="clear"></div>
+			</div>
+			<span class="lower-shadow"><span>
+			<div class="clear"></div>
 		</div>
 		</a>
 	<% end %>
-	<%= will_paginate @products, :page_links => false  %>
+	<div class="clear"></div>
+	<%= will_paginate @products, :page_links => true  %>

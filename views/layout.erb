@@ -27,23 +27,24 @@
         <a href="https://twitter.com/share" class="twitter-share-button" data-text="SnickSnaps - The best way to browse Craigslist" data-via="danest">Tweet</a>
       <div class="fb-like" data-send="true" data-layout="button_count" data-width="130" data-show-faces="false" data-font="arial"></div>
     </div>
-      <ul id="nav">
-        <li><a href="#">Categories</a>
-          <ul>
-            <li><a href="/">Cars and Trucks</a>
-            </li>
-            <li><a href="/electronics">Electronics</a>
-            </li>
-            <li><a href="/freebies">Freebies</a></li>
-          </ul>
-        </li>
-      </ul>
     </div>
   </header>
 
   <div id="container">
-    <h3>Currently only available in San Francisco, we are adding more cities soon</h3>
-    <%= yield %>
+    <div id="nav_cont">
+      <ul id="nav">
+          <li><a href="#">Browse All</li>
+          <li><a href="/">Cars and Trucks</a>
+          </li>
+          <li><a href="/electronics">Electronics</a>
+          </li>
+          <li><a href="/freebies">Freebies</a></li>
+        </ul>
+    </div>
+    <div id="items_cont">
+     <%= yield %>
+    </div>
+    <div class="clear"></div>
   </div>
 
   <footer>
