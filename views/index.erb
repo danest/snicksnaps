@@ -1,5 +1,4 @@
 	<% @products.each do |product| %>
-		<a href="<%= product.link %>" title="<%= product.title[0..19]+ "..." %>">
 		<div class="item">
 			<div class="image">
 				<%= image_tag product.img, :alt => @title, :title => @title , :width => "265px", :height => "180px" %>
@@ -9,8 +8,8 @@
 					<%= product.price %>
 				</div>
 				<div class="info">
-					<a href="<%= product.link %>" title="<%= product.title[0..13]+ "..." %>"><%= product.title[0..13]+ "..." %></a>
-					<p class="location"><%= product.location[0..15] %></p>
+					<a href="<%= product.link %>" title="<%= product.title %>"><%= product.title[0..18]+ "..." %></a>
+					<p class="location"><%= product.location[0..20].upcase %></p>
 				</div>
 				<div class="clear"></div>
 			</div>
