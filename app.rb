@@ -19,24 +19,25 @@ class Product
   property :img, Text, :required => true
   property :price, Text, :required => true
   property :location, Text, :required => true
+  property :city, Text, :required => true
   property :created_at, DateTime
   property :updated_at, DateTime
 end
 
-DataMapper.finalize.auto_upgrade!
+DataMapper.auto_migrate!
 
 
-get '/' do
+get '/:city/all' do
   @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "cars"}).paginate(:page => params[:page], :per_page => 30)
   erb :index
 end
 
-get '/freebies' do
+get '/:city/freebies' do
   @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "freebies"}).paginate(:page => params[:page], :per_page => 30)
   erb :index
 end
 
-get '/electronics' do
+get '/:city/electronics' do
   # response.set_cookie('something_cookie', 'value_of_cookie')
   # puts request.cookies['something_cookie']
   @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "electronics"}).paginate(:page => params[:page], :per_page => 30)

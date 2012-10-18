@@ -17,6 +17,7 @@ class Product
   property :img, Text, :required => true
   property :price, Text, :required => true
   property :location, Text, :required => true
+  property :city, Text, :required => true
   property :created_at, DateTime
   property :updated_at, DateTime
 end
@@ -76,6 +77,7 @@ def run_scrapper(category)
           p.link = item_link
           p.price = price
           p.location = location
+          p.city = "San-Francisco"
           p.img = img
           p.created_at = Time.now
           p.updated_at = Time.now
