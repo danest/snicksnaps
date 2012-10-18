@@ -27,6 +27,10 @@ end
 DataMapper.finalize.auto_upgrade!
 
 
+get '/' do
+  redirect to('san-francisco/all')
+end
+
 get '/:city/all' do
   @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "cars"}).paginate(:page => params[:page], :per_page => 30)
   erb :index
