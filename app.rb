@@ -37,6 +37,8 @@ get '/freebies' do
 end
 
 get '/electronics' do
+  # response.set_cookie('something_cookie', 'value_of_cookie')
+  # puts request.cookies['something_cookie']
   @products = Product.all(:order => [:created_at.desc], :conditions => {:category => "electronics"}).paginate(:page => params[:page], :per_page => 30)
   erb :index
 end

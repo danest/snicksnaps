@@ -52,7 +52,7 @@ def run_scrapper(category)
         location = item.css('.itempn')[0].text.strip
         #puts location
         url = "#{item_link}"
-        sleep 2
+        sleep 1 #this is causing it to run slower
         doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
         str =  doc.css('#userbody')[0].text
