@@ -24,7 +24,7 @@ class Product
   property :updated_at, DateTime
 end
 
-DataMapper.auto_migrate!
+DataMapper.finalize.auto_upgrade!
 
 
 get '/:city/all' do
