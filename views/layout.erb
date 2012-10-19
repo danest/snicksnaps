@@ -13,6 +13,7 @@
   <meta property="og:site_name" content="SnickSnaps" />
   <meta property="fb:admins" content="559755285" />
   <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+  <script src="/js/cookies.js"></script>
   <link href="/reset.css" rel="stylesheet">
   <link href="/style.css" rel="stylesheet">
 </head>
@@ -48,13 +49,14 @@
   </div>
 
   <footer>
-    <div id="overlay-s">
+    <div id="overlay">
     </div>
     <div id="city_container">
       <h2>SnickSnaps</h2>
       <ul id="city_ul">
         <li>Select Your City
           <ul id="city_items">
+            <li>San Francisco</li>
             <li>New York</li>
             <li>Connecticut</li>
           </ul>
@@ -89,6 +91,7 @@
 
 <script>
   $(document).ready(function(){
+
     jQuery.fn.center = function () {
       this.css("position","absolute");
       this.css("top", Math.max(0, (($(window).height() - this.outerHeight()) / 2) +
@@ -98,7 +101,13 @@
       return this;
     }
 
-    //$("#city_container").center();
+    console.log('test');
+    if(!($.cookie('select_city'))){
+      $("#city_container").center();
+      $('#city_items li').click(function(){
+        console.log($(this).text().replace(/\s+/g, '-').toLowerCase());
+      })
+    }
   });
 </script>
 

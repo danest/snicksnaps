@@ -217,6 +217,7 @@ a {
     height: 20px;
     width: 200px;
     border: 1px solid #adb1b4;
+    border-radius: 8px;
 }
 #city_ul li:hover{
 
@@ -226,12 +227,16 @@ a {
 	display: block;
 }
 
+#city_ul li:hover > ul li:hover{
+	color:#018dff;
+	cursor: pointer;
+}
+
 
 /* level 2 list */
 #city_ul ul {
 	display: none;
 	list-style: none;
-	border: solid 1px #b4b4b4;
 	margin-left: -13px;
 	margin-top: 10px;
 }
