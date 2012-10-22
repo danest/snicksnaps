@@ -18,12 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-set :output, {:error => "logs/error.log", :standard => "logs/cron.log"}
-every 1.minutes do
-	puts 'testtest'
-end
+set :output, {:error => "#{Dir.pwd}/logs/stderr.log", :standard => "#{Dir.pwd}/logs/stdout.log"}
+#set :output, "logs/stdout.log"
+#every 10.minutes
+require 'rake'
 
-#every :day, :at => '5:44pm' do
- # puts 'starting task'
- # rake 'fetch'
-#end
+every 2.minutes do
+  rake 'fetch'
+end
