@@ -1,23 +1,23 @@
-	<% @products.each do |product| %>
-		<a href="<%= product.link %>" title="<%= product.title%>">
-		<div class="item">
-			<div class="image">
-				<%= image_tag product.img, :alt => @title, :title => @title , :width => "265px", :height => "180px" %>
+<% @products.each do |product| %>
+	<a href="<%= product.link %>" title="<%= product.title%>">
+	<div class="item">
+		<div class="image">
+			<%= image_tag product.img, :alt => @title, :title => @title , :width => "265px", :height => "180px" %>
+		</div>
+		<div class="item-bottom">
+			<div class="price">
+				<%= product.price %>
 			</div>
-			<div class="item-bottom">
-				<div class="price">
-					<%= product.price %>
-				</div>
-				<div class="info">
-					<a href="<%= product.link %>" title="<%= product.title %>"><%= product.title[0..18]+ "..." %></a>
-					<p class="location"><%= product.location[0..20].upcase %></p>
-				</div>
-				<div class="clear"></div>
+			<div class="info">
+				<a href="<%= product.link %>" title="<%= product.title %>"><%= product.title[0..18]+ "..." %></a>
+				<p class="location"><%= product.location[0..20].upcase %></p>
 			</div>
-			<span class="lower-shadow"><span>
 			<div class="clear"></div>
 		</div>
-		</a>
-	<% end %>
-	<div class="clear"></div>
-	<%= will_paginate @products, :page_links => true  %>
+		<span class="lower-shadow"><span>
+		<div class="clear"></div>
+	</div>
+	</a>
+<% end %>
+<div class="clear"></div>
+<%= will_paginate @products, :page_links => true  %>

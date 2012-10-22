@@ -5,7 +5,19 @@ require 'nokogiri'
 require 'open-uri'
 task :fetch do
 
-DataMapper.setup(:default, ENV['DATABASE_URL'] || "sqlite:///#{Dir.pwd}/pinn.db")
+if ENV['VCAP_SERVICES'].nil?
+  DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db")
+else
+  require 'json'
+  services = JSON.parse(ENV['VCAP_SERVICES'])
+  postgresql_key = services.keys.select { |svc| svc =~ /postgresql/i }.first
+  postgresql = services[postgresql_key].first['credentials']
+  #postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
+  #connection = PG.connect(postgresql_conn)
+  postgresql_conn = "postgres://"+postgresql['user']+":"+postgresql['password']+"@"+postgresql['host']+":"+postgresql['port'].to_s + " " + "/"+postgresql['name']
+  postgresql_conn.gsub!(/\s+/, "")
+  DataMapper.setup(:default, postgresql_conn )
+end
 
 class Product
   include DataMapper::Resource

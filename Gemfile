@@ -1,6 +1,7 @@
 source 'http://rubygems.org'
 
-gem "pg"
+gem 'pg', '~> 0.14.1'
+gem 'whenever', :require => false
 #gem 'sqlite3'
 gem 'dm-postgres-adapter'
 gem 'sinatra-static-assets'
