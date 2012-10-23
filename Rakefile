@@ -3,9 +3,8 @@ require 'data_mapper'
 require 'json'
 require 'nokogiri'
 require 'open-uri'
-require 'rake'
+
 task :fetch do
-  puts "hello world"
 
 	if ENV['VCAP_SERVICES'].nil?
 	  DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db")
@@ -14,8 +13,9 @@ task :fetch do
 	  services = JSON.parse(ENV['VCAP_SERVICES'])
 	  postgresql_key = services.keys.select { |svc| svc =~ /postgresql/i }.first
 	  postgresql = services[postgresql_key].first['credentials']
-	  #postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
+	  postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
 	  #connection = PG.connect(postgresql_conn)
+	  puts postgresql_conn
 	  postgresql_conn = "postgres://"+postgresql['user']+":"+postgresql['password']+"@"+postgresql['host']+":"+postgresql['port'].to_s + " " + "/"+postgresql['name']
 	  postgresql_conn.gsub!(/\s+/, "")
 	  DataMapper.setup(:default, postgresql_conn )
@@ -91,11 +91,12 @@ task :fetch do
 	          p.link = item_link
 	          p.price = price
 	          p.location = location
-	          p.city = "San-Francisco"
+	          p.city = "san-francisco"
 	          p.img = img
 	          p.created_at = Time.now
 	          p.updated_at = Time.now
 	          p.save
+	          puts p
 	        end
 	    end
 	  end

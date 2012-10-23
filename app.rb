@@ -1,7 +1,6 @@
 require 'sinatra'
 require 'data_mapper'
 require 'json'
-require 'nokogiri'
 require 'open-uri'
 require 'sinatra/static_assets'
 require 'will_paginate'
@@ -14,8 +13,9 @@ else
   services = JSON.parse(ENV['VCAP_SERVICES'])
   postgresql_key = services.keys.select { |svc| svc =~ /postgresql/i }.first
   postgresql = services[postgresql_key].first['credentials']
-  #postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
+  postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
   #connection = PG.connect(postgresql_conn)
+  puts postgresql_conn
   postgresql_conn = "postgres://"+postgresql['user']+":"+postgresql['password']+"@"+postgresql['host']+":"+postgresql['port'].to_s + " " + "/"+postgresql['name']
   postgresql_conn.gsub!(/\s+/, "")
   DataMapper.setup(:default, postgresql_conn )

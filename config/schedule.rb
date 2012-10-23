@@ -18,11 +18,11 @@
 # end
 
 # Learn more: http://github.com/javan/whenever
-set :output, {:error => "#{Dir.pwd}/logs/stderr.log", :standard => "#{Dir.pwd}/logs/stdout.log"}
+#set :output, {:error => "#{Dir.pwd}/logs/stderr.log", :standard => "#{Dir.pwd}/logs/stdout.log"}
 #set :output, "logs/stdout.log"
 #every 10.minutes
-require 'rake'
+#require 'rake'
 
-every 2.minutes do
-  rake 'fetch'
-end
+#every 2.minutes do
+ # rake 'fetch'
+#end
