@@ -148,6 +148,7 @@ a {
 #logodiv{
 	float: left;
 	margin-top: 10px;
+	margin-left: 30px;
 }
 
 #say{
@@ -182,10 +183,12 @@ a {
 #city_container{
 	z-index: 1001;
 	opacity: 1;
+	display: none;
 }
 
 #overlay {
     position: fixed;
+    display: none;
     top: 0;
     left: 0;
     width: 100%;

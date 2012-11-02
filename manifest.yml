@@ -3,15 +3,15 @@ applications:
   .:
     name: snicksnaps
     framework:
-      name: rack
+      name: sinatra
       info:
         mem: 128M
-        description: Rack Application
+        description: Sinatra Application
         exec: 
     infra: aws
     url: ${name}.${target-base}
     mem: 128M
     instances: 1
     services:
-      postgresql-e014f:
+      fsdfsdf:
         type: postgresql

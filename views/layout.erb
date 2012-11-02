@@ -22,7 +22,7 @@
   <header id="header">
     <div id="hcont">
     <div id="logodiv">
-          <a href="/san-francisco/all" title="SnickSnap" id="logo">SnickSnap</a>
+          <a href="/<%= city_name %>/all" title="SnickSnap" id="logo">SnickSnap</a>
            <h1 id="say">The best way to browse Craigslist</h1>
     </div>
     <div id="social">
@@ -35,15 +35,42 @@
   <div id="container">
     <div id="nav_cont">
       <ul id="nav">
-          <li><a href="/san-francisco/all">Browse All</li>
-          <li><a href="/san-francisco/all">Cars and Trucks</a>
+          <li><a href="/<%= city_name %>/all">Browse All</li>
+          <li><a href="/<%= city_name %>/activites">Activities</li>
+          <li><a href="/<%= city_name %>/beauty">Beauty Services</li>
+          <li><a href="/<%= city_name %>/cars">Cars</a>
           </li>
-          <li><a href="/san-francisco/electronics">Electronics</a>
+          <li><a href="/<%= city_name %>/computer">Computer</li>
+          <li><a href="/<%= city_name %>/events">Events</li>
+          <li><a href="/<%= city_name %>/electronics">Electronics</a>
           </li>
-          <li><a href="/san-francisco/freebies">Freebies</a></li>
+          <li><a href="/<%= city_name %>/freebies">Freebies</a></li>
+          <li><a href="/<%= city_name %>/furniture">Furniture</li>
+          <li><a href="/<%= city_name %>/housing">Housing</li>
+          <li><a href="/<%= city_name %>/jobs">jobs</li>
+          <li><a href="/<%= city_name %>/parking">Parking/Storage</li>
+          <li><a href="/<%= city_name %>/sporting">Sporting</li>
+          <li><a href="http://snagfreesamples.com/">SnagFreeSamples.com</li>
+          <li><a href="/<%= city_name %>/videogames">Video Gaming</li>
         </ul>
     </div>
     <div id="items_cont">
+            <!-- Begin MailChimp Signup Form -->
+      <link href="http://cdn-images.mailchimp.com/embedcode/slim-081711.css" rel="stylesheet" type="text/css">
+      <style type="text/css">
+        #mc_embed_signup{background:#fff; clear:left; font:14px Helvetica,Arial,sans-serif; }
+        /* Add your own MailChimp form style overrides in your site stylesheet or in this style block.
+           We recommend moving this block and the preceding CSS link to the HEAD of your HTML file. */
+      </style>
+      <div id="mc_embed_signup">
+      <form action="http://onetinybit.us6.list-manage.com/subscribe/post?u=7eed2e54244bdcca52ac0c152&amp;id=734b902b80" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+        <label for="mce-EMAIL">Subscribe to our mailing list</label>
+        <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="email address" required>
+        <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+      </form>
+      </div>
+
+<!--End mc_embed_signup-->
      <%= yield %>
     </div>
     <div class="clear"></div>
@@ -57,9 +84,24 @@
       <ul id="city_ul">
         <li>Select Your City
           <ul id="city_items">
-            <li>San Francisco</li>
+            <li>San Francisco Bay</li>
             <li>New York</li>
-            <li>Connecticut</li>
+            <li>Hartford</li>
+            <li>Los Angeles</li>
+            <li>Seattle</li>
+            <li>San Diego</li>
+            <li>Chicago</li>
+            <li>Miami</li>
+            <li>Phoenix</li>
+            <li>Atlanta</li>
+            <li>Dallas</li>
+            <li>Las Vegas</li>
+            <li>Tampa</li>
+            <li>Boston</li>
+            <li>Minneapolis</li>
+            <li>Washington DC</li>
+            <li>Sacramento</li>
+            <li>Austin</li>
           </ul>
         </li>
       </ul>

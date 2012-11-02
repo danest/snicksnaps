@@ -22,17 +22,18 @@ $(document).ready(function(){
 
   */
 
-  if(!($.cookie('select_city'))){
-    console.log('current');
-    $("#city_container").center();
+  if( !($.cookie('select_city')) ){
+    $("#overlay").toggle();
+    $("#city_container").center().toggle();
     $('#city_items li').click(function(){
-      var city = $(this).text().replace(/\s+/g, '-').toLowerCase();
-      console.log(city);
-      $.cookie('select_city', city);
+    var city = $(this).text().replace(/\s+/g, '-').toLowerCase();
+    console.log(city);
+    $.cookie('select_city', city, { expires: 365, path: '/' });
+    window.location = '/'
     });
-  } else {
-    // quick fix for now
-    $("#overlay").remove();
-    $("#city_container").remove();
   }
+
+  console.log($.cookie('select_city'));
+
+
 });

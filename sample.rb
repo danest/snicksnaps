@@ -1,34 +1,35 @@
+require 'nokogiri'
 
-if ENV['VCAP_SERVICES'].nil?
-  DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db")
-else
-  require 'json'
-  services = JSON.parse(ENV['VCAP_SERVICES'])
-  postgresql_key = services.keys.select { |svc| svc =~ /postgresql/i }.first
-  postgresql = services[postgresql_key].first['credentials']
-  #postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
-  #connection = PG.connect(postgresql_conn)
-  postgresql_conn = "postgres://"+postgresql['user']+":"+postgresql['password']+"@"+postgresql['host']+":"+postgresql['port'].to_s + " " + "/"+postgresql['name']
-  postgresql_conn.gsub!(/\s+/, "")
-  DataMapper.setup(:default, postgresql_conn )
-end
+# if ENV['VCAP_SERVICES'].nil?
+#   DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db")
+# else
+#   require 'json'
+#   services = JSON.parse(ENV['VCAP_SERVICES'])
+#   postgresql_key = services.keys.select { |svc| svc =~ /postgresql/i }.first
+#   postgresql = services[postgresql_key].first['credentials']
+#   #postgresql_conn = {:host => postgresql['hostname'], :port => postgresql['port'], :user => postgresql['user'], :password => postgresql['password'], :dbname => postgresql['name']}
+#   #connection = PG.connect(postgresql_conn)
+#   postgresql_conn = "postgres://"+postgresql['user']+":"+postgresql['password']+"@"+postgresql['host']+":"+postgresql['port'].to_s + " " + "/"+postgresql['name']
+#   postgresql_conn.gsub!(/\s+/, "")
+#   DataMapper.setup(:default, postgresql_conn )
+# end
 
-class Product
-  include DataMapper::Resource
-  property :id, Serial
-  property :title, Text, :unique => true
-  property :link, Text, :required => true
-  property :description, Text, :required => true
-  property :category, Text, :required => true
-  property :img, Text, :required => true
-  property :price, Text, :required => true
-  property :location, Text, :required => true
-  property :city, Text, :required => true
-  property :created_at, DateTime
-  property :updated_at, DateTime
-end
+# class Product
+#   include DataMapper::Resource
+#   property :id, Serial
+#   property :title, Text, :unique => true
+#   property :link, Text, :required => true
+#   property :description, Text, :required => true
+#   property :category, Text, :required => true
+#   property :img, Text, :required => true
+#   property :price, Text, :required => true
+#   property :location, Text, :required => true
+#   property :city, Text, :required => true
+#   property :created_at, DateTime
+#   property :updated_at, DateTime
+# end
 
-DataMapper.finalize.auto_upgrade!
+# DataMapper.finalize.auto_upgrade!
 
 def run_scrapper(category)
   puts Time.now.getutc
@@ -42,6 +43,8 @@ def run_scrapper(category)
     puts "error not running SCRAPPER"
   end
   doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
+
+  puts "starting"
 
   doc.css(".row").each do |item|
   #puts item.at_css('')
@@ -76,26 +79,28 @@ def run_scrapper(category)
           img =  images[1].strip
           #puts img
         end
-          p = Product.new
-          p.title = title
-          p.description = description
-          p.category = category
-          p.link = item_link
-          p.price = price
-          p.location = location
-          p.city = "San-Francisco"
-          p.img = img
-          p.created_at = Time.now
-          p.updated_at = Time.now
-          p.save
+          puts title
+          puts description
+          # p = Product.new
+          # p.title = title
+          # p.description = description
+          # p.category = category
+          # p.link = item_link
+          # p.price = price
+          # p.location = location
+          # p.city = "San-Francisco"
+          # p.img = img
+          # p.created_at = Time.now
+          # p.updated_at = Time.now
+          # p.save
         end
     end
   end
-  run_scrapper("cars")
-  puts "CARS SCRAPPER"
-  run_scrapper("electronics")
-  puts "ELECTORNICS SCRAPPER"
+  # run_scrapper("cars")
+  # puts "CARS SCRAPPER"
+  # run_scrapper("electronics")
+  # puts "ELECTORNICS SCRAPPER"
   run_scrapper("freebies")
-  puts "FREEBIES SCRAPPER"
-  puts "finished rake task"
-  puts Time.now.getutc
+  # puts "FREEBIES SCRAPPER"
+  # puts "finished rake task"
+  # puts Time.now.getutc
