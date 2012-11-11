@@ -24,6 +24,6 @@ set :output, "#{Dir.pwd}/logs/cronout.log"
 
 
 
-every 2.minutes do
- puts 'test test'
+every 1.day, :at => '11:10 am' do
+ rake 'fetch'
 end
