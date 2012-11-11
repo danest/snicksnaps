@@ -19,11 +19,13 @@
 
 # Learn more: http://github.com/javan/whenever
 #set :output, {:error => "#{Dir.pwd}/logs/stderr.log", :standard => "#{Dir.pwd}/logs/stdout.log"}
-set :output, "#{Dir.pwd}/logs/cronout.log"
+set :output, "#{Dir.pwd}/logs/cron.log"
 #every 10.minutes
+require 'rake'
 
 
-
-every 1.day, :at => '11:10 am' do
+every 1.day, :at => '11:17 am' do
  rake 'fetch'
 end
+
+
