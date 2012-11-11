@@ -25,7 +25,8 @@ class Product
 end
 
 
-DataMapper.finalize.auto_upgrade!
+DataMapper.auto_migrate!
+#DataMapper.finalize.auto_upgrade!
 
 helpers do
   def city_name
