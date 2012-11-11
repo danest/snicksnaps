@@ -21,8 +21,8 @@
 #set :output, {:error => "#{Dir.pwd}/logs/stderr.log", :standard => "#{Dir.pwd}/logs/stdout.log"}
 #set :output, "logs/stdout.log"
 #every 10.minutes
-#require 'rake'
 
-every 50.minutes do
- rake 'fetch'
+
+every 2.minutes do
+ puts 'test test', :output => {:error => 'error.log', :standard => 'cron.log'}
 end

@@ -7,14 +7,14 @@ require 'json'
 
 DataMapper.setup(:default, "postgres://snicksnaps:secret@localhost/snicksnaps_production" || "sqlite:///#{Dir.pwd}/pinn.db")
 
-DataObjects::Postgres::Connection.class_eval do
-   def self.pool_size
-     1
-   end
-end
-DataObjects::Pooling.pools.each do |pool|
-  pool.dispose
-end
+# DataObjects::Postgres::Connection.class_eval do
+#    def self.pool_size
+#      1
+#    end
+# end
+# DataObjects::Pooling.pools.each do |pool|
+#   pool.dispose
+# end
 
 # puts "here"
 
