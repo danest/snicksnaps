@@ -148,6 +148,7 @@ cities.each do |city|
       else
         city_d = city
       end
+      puts "going to run cars"
       run_scrapper("cars", "http://#{city}.craigslist.org/cto/", city_d)
       sleep 100
       puts "CARS SCRAPPER"
