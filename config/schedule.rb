@@ -25,7 +25,7 @@ require 'rake'
 
 
 every 1.day, :at => '11:17 am' do
+ require 'rake'
  rake 'fetch'
 end
-
 
