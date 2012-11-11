@@ -106,6 +106,8 @@ DataMapper.finalize.auto_upgrade!
             #puts img
           end
             puts title
+            puts city.to_s
+            puts category.to_s
             p = Product.new
             p.title = title.to_s
             p.description = description.to_s
@@ -117,14 +119,14 @@ DataMapper.finalize.auto_upgrade!
             p.img = img.to_s
             p.created_at = Time.now
             p.updated_at = Time.now
-            p.save
-            # if(p.save)
-            #     puts "saved"
-            # else
-            #   p.errors.each do |e|
-            #       puts e
-            #   end
-            # end
+            #p.save
+            if(p.save)
+                puts "saved"
+            else
+              p.errors.each do |e|
+                  puts e
+              end
+            end
           end
       end
     end
