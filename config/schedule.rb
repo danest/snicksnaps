@@ -24,7 +24,7 @@ set :output, "#{Dir.pwd}/logs/cron.log"
 require 'rake'
 
 job_type :rake,    "cd :path && RAILS_ENV=:environment rake :task --silent :output"
-every 1.day, :at => '11:55 am' do
+every 1.day, :at => '12:08 pm' do
  require 'rake'
  rake 'fetch'
 end
