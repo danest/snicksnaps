@@ -1,5 +1,18 @@
+<div class="ads">
+	<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5916589535446865";
+		/* SnickSnaps Top */
+		google_ad_slot = "7517938444";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+</div>
 <% @products.each do |product| %>
-	<a href="<%= product.link %>" title="<%= product.title%>">
+	<a href="<%= product.link %>" title="<%= product.title%>" target="_blank">
 	<div class="item">
 		<div class="image">
 			<%= image_tag product.img, :alt => @title, :title => @title , :width => "265px", :height => "180px" %>
@@ -9,7 +22,7 @@
 				<%= product.price %>
 			</div>
 			<div class="info">
-				<a href="<%= product.link %>" title="<%= product.title %>"><%= product.title[0..18]+ "..." %></a>
+				<a href="<%= product.link %>" title="<%= product.title %>" target="_blank"><%= product.title[0..18]+ "..." %></a>
 				<p class="location"><%= product.location[0..20].upcase %></p>
 			</div>
 			<div class="clear"></div>
@@ -20,4 +33,18 @@
 	</a>
 <% end %>
 <div class="clear"></div>
+<div class="ads">
+	<script type="text/javascript"><!--
+		google_ad_client = "ca-pub-5916589535446865";
+		/* SnickSnaps */
+		google_ad_slot = "6735976035";
+		google_ad_width = 728;
+		google_ad_height = 90;
+		//-->
+	</script>
+	<script type="text/javascript"
+	src="http://pagead2.googlesyndication.com/pagead/show_ads.js">
+	</script>
+
+</div>
 <%= will_paginate @products, :page_links => true  %>

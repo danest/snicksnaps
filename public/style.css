@@ -11,6 +11,7 @@ body {
 	-webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
     -moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
     box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.3);
+    margin: 0px;
 }
 
 #logo{
@@ -22,12 +23,37 @@ body {
 	float: left;
 }
 
-#city_container h2 {
+.city-header-selector {
+	float: left;
+	height: 47px;
+	margin-left: 50px;
+	margin-top: 30px;
+}
+
+.city-header-selector:hover {
+	cursor: pointer;
+}
+.city-header-selector p:hover {
+	border-bottom: 1px solid #0181F1;
+}
+
+.city-header-selector p {
+	color: #0181f1;
+	font-size: 18px;
+	display: block;
+	float: left;
+	margin-top: -3px;
+	margin-left: 5px;
+
+}
+
+#city_container .logo {
 	text-indent: -9999px;
 	background: url('logo.png') no-repeat;
-	display: block;
+	display: inline-block;
 	height: 47px;
-	width:260px;
+	width: 262px;
+	margin: 0 auto;
 }
 
 #logo:active{
@@ -126,6 +152,7 @@ a {
 	line-height: 100%;
 	height: 100%;
 	list-style: none;
+	margin-left: 0px;
 }
 
 #nav li a {
@@ -148,7 +175,6 @@ a {
 #logodiv{
 	float: left;
 	margin-top: 10px;
-	margin-left: 30px;
 }
 
 #say{
@@ -184,6 +210,8 @@ a {
 	z-index: 1001;
 	opacity: 1;
 	display: none;
+	background-color: #fff;
+	padding: 10px;
 }
 
 #overlay {
@@ -198,29 +226,26 @@ a {
     -khtml-opacity: 0.5;
     opacity: 0.5;
     z-index: 999;
-    background-color: #e8e8e9;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#e8e8e9), to(#6e96b8));
-    background: -webkit-linear-gradient(top, #e8e8e9, #6e96b8);
-    background: -moz-linear-gradient(top, #e8e8e9, #6e96b8);
-    background: -ms-linear-gradient(top, #e8e8e9, #6e96b8);
-    background: -o-linear-gradient(top, #e8e8e9, #6e96b8);
+    background-color: #085393;
+    background: -webkit-linear-gradient(top, #e8e8e9, #085393);
+    background: -moz-linear-gradient(top, #e8e8e9, #085393);
+    background: -ms-linear-gradient(top, #e8e8e9, #085393);
+    background: -o-linear-gradient(top, #e8e8e9, #085393);
 }
  #city_ul {
  	list-style: none;
+ 	margin-left: 0px;
+	width: 212px;
+	margin: 0 auto;
+	margin-top: 10px;
  }
 
 #city_ul li{
-	background-color: #f1f1f1;
-    background: -webkit-gradient(linear, 0% 0%, 0% 100%, from(#f1f1f1), to(#fefefe));
-    background: -webkit-linear-gradient(top, #f1f1f1, #fefefe);
-    background: -moz-linear-gradient(top, #f1f1f1, #fefefe);
-    background: -ms-linear-gradient(top, #f1f1f1, #fefefe);
-    background: -o-linear-gradient(top, #f1f1f1, #fefefe);
-    padding: 12px;
+    padding: 5px;
     height: 20px;
     width: 200px;
     border: 1px solid #adb1b4;
-    border-radius: 8px;
+    background: #ffffff url('arrows.png') no-repeat right;
 }
 #city_ul li:hover{
 
@@ -231,7 +256,7 @@ a {
 }
 
 #city_ul li:hover > ul li:hover{
-	color:#018dff;
+	color:#595959;
 	cursor: pointer;
 }
 
@@ -240,19 +265,93 @@ a {
 #city_ul ul {
 	display: none;
 	list-style: none;
-	margin-left: -13px;
-	margin-top: 10px;
+	margin-left: -5px;
+	margin-top: 4px;
 }
 
 #city_ul ul li {
-	padding: 10px;
-	width: 202px;
+	padding: 5px;
+	width: 200px;
 	background: #cbd2d7;
-	border: 1px solid #dde4ea;
+	border: none;
 }
 
 #city_ul ul li:hover{
-	background: #ececec;
-	border: 1px solid #ffffff;
+	background: #71b9f3;
+	border: none;
 }
+
+.overlay-p {
+	width: 400px;
+	color: #000;
+	font-size: 18px;
+	font-family: Helvetica, sans-serif;
+}
+
+.overlay-p h1 {
+	color: #000;
+	font-size: 22px;
+}
+
+/* mail chimp */
+
+#mc_embed_signup {
+	background-color: #aeaeae;
+	padding: 15px 0;
+	border-bottom: 2px solid rgba(255,255,255, 1);
+
+}
+#mc-embedded-subscribe-form {
+  width: 1024px;
+  margin: 0 auto;
+}
+
+#mc_embed_signup form label {
+	color: #fff;
+	font-size: 20px;
+	margin-right: 15px;
+}
+
+#mce-EMAIL {
+	border: 1px solid #959595;
+	color: #c6c6c6;
+	padding: 5px;
+	font-size: 14px;
+}
+
+#mc-embedded-subscribe {
+	border: 1px solid #959595;
+	background-color: #59b1f9;
+    background: -webkit-linear-gradient(top, #59b1f9, #046abc);
+    background: -moz-linear-gradient(top, #59b1f9, #046abc);
+    background: -ms-linear-gradient(top, #59b1f9, #046abc);
+    background: -o-linear-gradient(top, #59b1f9, #046abc);
+    color: #fff;
+    padding: 5px;
+    font-size: 14px;
+
+}
+.city {
+	display: block;
+	background: url('city.png') no-repeat;
+	width: 21px;
+	height: 22px;
+	float: left;
+
+}
+
+.arrow {
+	display: block;
+	background: url('downarrow.png') no-repeat;
+	width: 14px;
+	height: 12px;
+	float: left;
+	margin-left: 9px;
+	margin-top: 6px;
+}
+
+.ads {
+	margin-left: 75px;
+}
+
 

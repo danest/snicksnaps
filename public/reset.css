@@ -128,11 +128,7 @@ label, input[type="button"], input[type="submit"], input[type="image"], button {
 /* webkit browsers add a 2px margin outside the chrome of form elements */
 button, input, select, textarea { margin: 0; }
 
-/* colors for form validity */
-input:valid, textarea:valid   {  }
-input:invalid, textarea:invalid {
-			border-radius: 1px; -moz-box-shadow: 0px 0px 5px red; -webkit-box-shadow: 0px 0px 5px red; box-shadow: 0px 0px 5px red;
-}
+
 .no-boxshadow input:invalid, .no-boxshadow textarea:invalid { background-color: #f0dddd; }
 
 /* These selection declarations have to be separate.

@@ -5,8 +5,10 @@ gem 'sqlite3'
 gem 'dm-postgres-adapter'
 gem 'sinatra-static-assets'
 gem 'dm-sqlite-adapter'
-gem 'sinatra'
+gem "sinatra", "~> 1.3.3"
+gem "rack", "~> 1.4.1"
 gem 'data_mapper'
 gem 'nokogiri'
 gem 'will_paginate', '~> 3.0'
+gem 'xml-sitemap'
 
