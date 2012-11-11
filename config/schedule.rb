@@ -19,10 +19,11 @@
 
 # Learn more: http://github.com/javan/whenever
 #set :output, {:error => "#{Dir.pwd}/logs/stderr.log", :standard => "#{Dir.pwd}/logs/stdout.log"}
-#set :output, "logs/stdout.log"
+set :output, "#{Dir.pwd}/logs/cronout.log"
 #every 10.minutes
 
 
+
 every 2.minutes do
- puts 'test test', :output => {:error => 'error.log', :standard => 'cron.log'}
+ puts 'test test'
 end
