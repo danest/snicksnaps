@@ -18311,3 +18311,15 @@ Try running `bundle update sinatra`
 	from /Users/danest/.rvm/gems/ruby-1.9.3-p194@global/bin/rake:18:in `<main>'
 	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `eval'
 	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `<main>'
+/Users/danest/.rvm/gems/ruby-1.9.3-p194@global/gems/bundler-1.1.4/lib/bundler/rubygems_integration.rb:147:in `block in replace_gem': rake is not part of the bundle. Add it to Gemfile. (Gem::LoadError)
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194@global/bin/rake:18:in `<main>'
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `eval'
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `<main>'
+/Users/danest/.rvm/gems/ruby-1.9.3-p194@global/gems/bundler-1.1.4/lib/bundler/rubygems_integration.rb:147:in `block in replace_gem': rake is not part of the bundle. Add it to Gemfile. (Gem::LoadError)
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194@global/bin/rake:18:in `<main>'
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `eval'
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `<main>'
+/Users/danest/.rvm/gems/ruby-1.9.3-p194@global/gems/bundler-1.1.4/lib/bundler/rubygems_integration.rb:147:in `block in replace_gem': rake is not part of the bundle. Add it to Gemfile. (Gem::LoadError)
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194@global/bin/rake:18:in `<main>'
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `eval'
+	from /Users/danest/.rvm/gems/ruby-1.9.3-p194/bin/ruby_noexec_wrapper:14:in `<main>'
