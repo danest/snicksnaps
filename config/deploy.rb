@@ -1,4 +1,6 @@
 require "bundler/capistrano"
+set :whenever_command, "bundle exec whenever"
+require "whenever/capistrano"
 
 server "208.68.39.86", :web, :app, :db, primary: true
 

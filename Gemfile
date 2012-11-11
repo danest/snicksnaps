@@ -18,4 +18,5 @@ gem 'will_paginate', '~> 3.0'
 gem 'xml-sitemap'
 gem 'capistrano'
 gem 'unicorn'
+gem 'whenever', :require => false
 

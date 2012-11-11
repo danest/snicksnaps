@@ -5,7 +5,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'json'
 
-DataMapper.setup(:default, postgresql_conn )
+DataMapper.setup(:default, "postgres://snicksnaps:secret@localhost/snicksnaps_production" || "sqlite:///#{Dir.pwd}/pinn.db")
 
 DataObjects::Postgres::Connection.class_eval do
    def self.pool_size
