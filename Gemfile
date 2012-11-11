@@ -1,10 +1,15 @@
 source 'http://rubygems.org'
 
-gem 'pg', '~> 0.14.1'
-gem 'sqlite3'
+group :development, :test do
+   gem 'sqlite3'
+   gem 'dm-sqlite-adapter'
+end
+
+group :production do
+  gem 'pg', '~> 0.14.1'
+end
 gem 'dm-postgres-adapter'
 gem 'sinatra-static-assets'
-gem 'dm-sqlite-adapter'
 gem 'sinatra', :git => "git://github.com/sinatra/sinatra.git"
 gem "rack", "~> 1.4.1"
 gem 'data_mapper'
