@@ -24,7 +24,7 @@ set :output, "#{Dir.pwd}/logs/cron.log"
 require 'rake'
 
 job_type :rake,    "cd :path && RAILS_ENV=:environment rake :task --silent :output"
-every 5.minutes do
+every 2.hours do
  rake 'fetch'
 end
 
