@@ -4,3 +4,8 @@
 [11/11/12 21:52:45 -0800 Kevin-Urrutias-MacBook-Pro-2.local (47548)] WARN : Agent configured not to send data in this environment.
 [11/11/12 21:52:45 -0800 Kevin-Urrutias-MacBook-Pro-2.local (47548)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 47548
 [11/11/12 21:52:45 -0800 Kevin-Urrutias-MacBook-Pro-2.local (47548)] INFO : Agent Log at /Users/danest/Desktop/rails_projects/snicksnaps/log/newrelic_agent.log
+[11/11/12 22:36:33 -0800 Kevin-Urrutias-MacBook-Pro-2.local (48496)] INFO : Dispatcher: sinatra
+[11/11/12 22:36:33 -0800 Kevin-Urrutias-MacBook-Pro-2.local (48496)] INFO : Application: Snicksnaps
+[11/11/12 22:36:33 -0800 Kevin-Urrutias-MacBook-Pro-2.local (48496)] WARN : Agent configured not to send data in this environment.
+[11/11/12 22:36:33 -0800 Kevin-Urrutias-MacBook-Pro-2.local (48496)] INFO : New Relic Ruby Agent 3.5.0.1 Initialized: pid = 48496
+[11/11/12 22:36:33 -0800 Kevin-Urrutias-MacBook-Pro-2.local (48496)] INFO : Agent Log at /Users/danest/Desktop/rails_projects/snicksnaps/log/newrelic_agent.log
