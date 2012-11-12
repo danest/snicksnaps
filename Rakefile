@@ -88,7 +88,6 @@ DataMapper.finalize.auto_upgrade!
           location = item.css('.itempn')[0].text.strip
           #puts location
           url = "#{item_link}"
-          sleep 1 #this is causing it to run slower
           doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
           str =  doc.css('#userbody')[0].text
@@ -131,9 +130,9 @@ DataMapper.finalize.auto_upgrade!
       end
     end
 
-cities = ['sfbay','hartford', 'losangeles', 'seattle','sandiego','chicago', 'miami',
-          'phoenix', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
-          'sacramento', 'austin', 'lasvegas', 'washingtondc', 'newyork']
+cities = ['phoenix','newyork', 'losangeles', 'seattle','sandiego','chicago', 'miami',
+          'sfbay', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
+          'sacramento', 'austin', 'lasvegas', 'washingtondc', 'hartford']
 
 cities.each do |city|
 
@@ -152,87 +151,87 @@ cities.each do |city|
       end
       puts "going to run cars"
       run_scrapper("cars", "http://#{city}.craigslist.org/cto/", city_d)
-      sleep 100
+      sleep 2
       puts "CARS SCRAPPER"
       run_scrapper("electronics", "http://#{city}.craigslist.org/ela/", city_d)
       puts "ELECTORNICS SCRAPPER"
-      sleep 100
+      sleep 2
       run_scrapper("freebies", "http://#{city}.craigslist.org/zip/", city_d)
-      sleep 100
+      sleep 2
       puts "FREEBIES SCRAPPER"
       puts "finished rake task"
 
       run_scrapper("activities", "http://#{city}.craigslist.org/act/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("beautyservices", "http://#{city}.craigslist.org/bts/", city_d)
       run_scrapper("computers", "http://#{city}.craigslist.org/cps/", city_d)
       run_scrapper("events", "http://#{city}.craigslist.org/evs/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("furniture", "http://#{city}.craigslist.org/fua/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("computers", "http://#{city}.craigslist.org/cps/", city_d)
       run_scrapper("events", "http://#{city}.craigslist.org/evs/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("housing", "http://#{city}.craigslist.org/hhh/", city_d)
       run_scrapper("jobs", "http://#{city}.craigslist.org/jjj/", city_d)
       run_scrapper("parking", "http://#{city}.craigslist.org/prk/", city_d)
       run_scrapper("sporting", "http://#{city}.craigslist.org/sga/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("appliances", "http://#{city}.craigslist.org/ppa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("antiques", "http://#{city}.craigslist.org/ata/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("barter", "http://#{city}.craigslist.org/bar/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("bikes", "http://#{city}.craigslist.org/bia/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("boats", "http://#{city}.craigslist.org/boo/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("books", "http://#{city}.craigslist.org/bka/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("business", "http://#{city}.craigslist.org/bfa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("general", "http://#{city}.craigslist.org/foa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("jewelry", "http://#{city}.craigslist.org/vga/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("materials", "http://#{city}.craigslist.org/ppa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("rvs", "http://#{city}.craigslist.org/rva/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("tickets", "http://#{city}.craigslist.org/tia/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("tools", "http://#{city}.craigslist.org/tla/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("wanted", "http://#{city}.craigslist.org/wan/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("artscrafts", "http://#{city}.craigslist.org/ara/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("autoparts", "http://#{city}.craigslist.org/pta/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("babykids", "http://#{city}.craigslist.org/baa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("beautyhlth", "http://#{city}.craigslist.org/haa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("cdsdvdvhs", "http://#{city}.craigslist.org/ema/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("cellphones", "http://#{city}.craigslist.org/moa/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("clothsacc", "http://#{city}.craigslist.org/cla/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("collectibles", "http://#{city}.craigslist.org/cba/", city_d)
-      sleep 100
+      sleep 2
       run_scrapper("farmgarden", "http://#{city}.craigslist.org/gra/", city_d)
-      sleep 100
+      sleep 1
       run_scrapper("garagesale", "http://#{city}.craigslist.org/hsa/", city_d)
-      sleep 100
+      sleep 1
       run_scrapper("household", "http://#{city}.craigslist.org/vga/", city_d)
-      sleep 100
+      sleep 1
       run_scrapper("motorcycles", "http://#{city}.craigslist.org/mca/", city_d)
-      sleep 100
+      sleep 1
       run_scrapper("musicinstr", "http://#{city}.craigslist.org/msa/", city_d)
-      sleep 100
+      sleep 1
       run_scrapper("photovideo", "http://#{city}.craigslist.org/pha/", city_d)
-      sleep 100
+      sleep 1
       run_scrapper("toysgames", "http://#{city}.craigslist.org/taa/", city_d)
 end
