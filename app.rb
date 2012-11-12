@@ -1,4 +1,5 @@
 require 'sinatra'
+require 'newrelic_rpm'
 require 'data_mapper'
 require 'json'
 require 'open-uri'
@@ -50,8 +51,12 @@ end
 get '/:city/cars' do
   city = request.cookies['select_city'] ||= 'san-francisco-bay'
   @products = Product.all(:order => [:created_at.desc], :conditions => {:city => city, :category => "cars" }).paginate(:page => params[:page], :per_page => 30)
-  puts @products
-  puts "how many"
+  erb :index
+end
+
+get '/:city/parking' do
+  city = request.cookies['select_city'] ||= 'san-francisco-bay'
+  @products = Product.all(:order => [:created_at.desc], :conditions => {:city => city, :category => "parking" }).paginate(:page => params[:page], :per_page => 30)
   erb :index
 end
 

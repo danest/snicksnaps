@@ -19,4 +19,5 @@ gem 'xml-sitemap'
 gem 'capistrano'
 gem 'unicorn'
 gem 'whenever', :require => false
+gem 'newrelic_rpm'
 
