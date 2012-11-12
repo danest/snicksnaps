@@ -42,7 +42,6 @@ DataMapper.finalize.auto_upgrade!
   #DataMapper.setup(:default, postgresql_conn )
 
   def run_scrapper(category, url, city)
-    puts Time.now.getutc
     # DataObjects::Pooling.pools.each do |pool|
     #   puts pool
     #   exit
@@ -69,10 +68,8 @@ DataMapper.finalize.auto_upgrade!
     #puts item.at_css('.itempx').css('.p').text
     #puts "hello"
       if item.at_css('.itempx').css('.p').text != ""
-          puts "in here"
           link =  item.css("a")
           title =  link[0].text.strip
-          puts title
           item_link = link[0]["href"].strip
 
           if (item.css('.itempp')[0] != nil )
@@ -83,7 +80,6 @@ DataMapper.finalize.auto_upgrade!
           if price == ""
             price = "FREE"
           end
-          puts price
           #puts "end price"
           location = item.css('.itempn')[0].text.strip
           #puts location
@@ -134,6 +130,8 @@ cities = ['washingtondc','lasvegas', 'losangeles', 'seattle','sandiego','chicago
           'sfbay', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
           'sacramento', 'austin', 'newyork', 'phoenix', 'hartford']
 
+cities.shuffle
+
 cities.each do |city|
 
       if(city == 'sfbay')
@@ -151,18 +149,12 @@ cities.each do |city|
       else
         city_d = city
       end
-      puts "going to run cars"
       run_scrapper("cars", "http://#{city}.craigslist.org/cto/", city_d)
       sleep 2
-      puts "CARS SCRAPPER"
       run_scrapper("electronics", "http://#{city}.craigslist.org/ela/", city_d)
-      puts "ELECTORNICS SCRAPPER"
       sleep 2
       run_scrapper("freebies", "http://#{city}.craigslist.org/zip/", city_d)
       sleep 2
-      puts "FREEBIES SCRAPPER"
-      puts "finished rake task"
-
       run_scrapper("activities", "http://#{city}.craigslist.org/act/", city_d)
       sleep 2
       run_scrapper("beautyservices", "http://#{city}.craigslist.org/bts/", city_d)
@@ -224,16 +216,17 @@ cities.each do |city|
       run_scrapper("collectibles", "http://#{city}.craigslist.org/cba/", city_d)
       sleep 2
       run_scrapper("farmgarden", "http://#{city}.craigslist.org/gra/", city_d)
-      sleep 1
+      sleep 2
       run_scrapper("garagesale", "http://#{city}.craigslist.org/hsa/", city_d)
-      sleep 1
+      sleep 2
       run_scrapper("household", "http://#{city}.craigslist.org/vga/", city_d)
-      sleep 1
+      sleep 2
       run_scrapper("motorcycles", "http://#{city}.craigslist.org/mca/", city_d)
-      sleep 1
+      sleep 2
       run_scrapper("musicinstr", "http://#{city}.craigslist.org/msa/", city_d)
-      sleep 1
+      sleep 2
       run_scrapper("photovideo", "http://#{city}.craigslist.org/pha/", city_d)
-      sleep 1
+      sleep 2
       run_scrapper("toysgames", "http://#{city}.craigslist.org/taa/", city_d)
+      sleep 2
 end
