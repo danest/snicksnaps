@@ -1,3 +1,3 @@
 require './app'
-set :environment, :production
+require 'newrelic_rpm'
 run Sinatra::Application
