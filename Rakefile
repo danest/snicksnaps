@@ -130,9 +130,9 @@ DataMapper.finalize.auto_upgrade!
       end
     end
 
-cities = ['phoenix','newyork', 'losangeles', 'seattle','sandiego','chicago', 'miami',
+cities = ['washingtondc','lasvegas', 'losangeles', 'seattle','sandiego','chicago', 'miami',
           'sfbay', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
-          'sacramento', 'austin', 'lasvegas', 'washingtondc', 'hartford']
+          'sacramento', 'austin', 'newyork', 'phoenix', 'hartford']
 
 cities.each do |city|
 
@@ -146,6 +146,8 @@ cities.each do |city|
         city_d = 'san-diego'
       elsif city == 'newyork'
         city_d = 'new-york'
+      elsif city == 'lasvegas'
+        city_d = 'las-vegas'
       else
         city_d = city
       end
