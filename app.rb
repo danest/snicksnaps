@@ -1,5 +1,5 @@
 require 'sinatra'
-require 'newrelic_rpm'
+require 'new_relic/newrelic_rpm'
 require 'data_mapper'
 require 'json'
 require 'open-uri'
