@@ -1,5 +1,4 @@
 require 'sinatra'
-require 'new_relic/newrelic_rpm'
 require 'data_mapper'
 require 'json'
 require 'open-uri'
@@ -7,6 +6,7 @@ require 'xml-sitemap'
 require 'sinatra/static_assets'
 require 'will_paginate'
 require 'will_paginate/data_mapper'  # or data_mapper/sequel
+require 'newrelic_rpm'
 
 DataMapper.setup(:default, "postgres://snicksnaps:secret@localhost/snicksnaps_production" || "sqlite:///#{Dir.pwd}/pinn.db")
 #DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db" || "postgres://snicksnaps:secret@localhost/snicksnaps_production")
