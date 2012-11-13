@@ -262,6 +262,11 @@ a {
 	cursor: pointer;
 }*/
 
+#city_ul li:hover > ul li:hover{
+	color:#595959;
+	cursor: pointer;
+}
+
 .hover {
 	display: block;
 }
