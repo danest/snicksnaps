@@ -1,6 +1,6 @@
 $(document).ready(function(){
   var clickEventType=((document.ontouchstart!==null)?'click':'touchstart');
-  console.log(clickEventType);`
+  console.log(clickEventType);
   jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - this.outerHeight()) / 4) +
