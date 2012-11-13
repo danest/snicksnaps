@@ -252,6 +252,7 @@ a {
 
 }
 
+/*
 #city_ul li:hover > ul {
 	display: block;
 }
@@ -259,7 +260,7 @@ a {
 #city_ul li:hover > ul li:hover{
 	color:#595959;
 	cursor: pointer;
-}
+}*/
 
 .hover {
 	display: block;

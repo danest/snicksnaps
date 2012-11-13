@@ -34,8 +34,8 @@ $(document).ready(function(){
   function citySelector() {
     $("#overlay").toggle();
     $("#city_container").center().toggle();
-    $('#city_ul').bind('touchstart',function(){
-      $("#city_ul ul").addClass('hover');
+    $('#city_ul').bind(clickEventType,function(){
+      $("#city_ul ul").css('display','block');
     });
     $('#city_items li').bind(clickEventType, function(){
       var city = $(this).text().replace(/\s+/g, '-').toLowerCase();
