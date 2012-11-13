@@ -261,6 +261,10 @@ a {
 	cursor: pointer;
 }
 
+.hover {
+	display: block;
+}
+
 
 /* level 2 list */
 #city_ul ul {

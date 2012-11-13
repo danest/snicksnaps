@@ -1,5 +1,6 @@
 $(document).ready(function(){
   var clickEventType=((document.ontouchstart!==null)?'click':'touchstart');
+  console.log(clickEventType);`
   jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - this.outerHeight()) / 4) +
@@ -28,6 +29,10 @@ $(document).ready(function(){
   // }, function(){
   //   $("#city_container").css('height', '189px');
   // })
+
+  $('#city_ul').bind('touchstart',function(){
+      $("#city_ul ul").addClass('hover');
+  })
 
   function citySelector() {
     $("#overlay").toggle();
