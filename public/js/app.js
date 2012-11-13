@@ -1,5 +1,5 @@
 $(document).ready(function(){
-
+  var clickEventType=((document.ontouchstart!==null)?'click':'touchstart');
   jQuery.fn.center = function () {
     this.css("position","absolute");
     this.css("top", Math.max(0, (($(window).height() - this.outerHeight()) / 4) +
@@ -32,7 +32,7 @@ $(document).ready(function(){
   function citySelector() {
     $("#overlay").toggle();
     $("#city_container").center().toggle();
-    $('#city_items li').click(function(){
+    $('#city_items li').bind(clickEventType, function(){
       var city = $(this).text().replace(/\s+/g, '-').toLowerCase();
       console.log(city);
       $.cookie('select_city', city, { expires: 365, path: '/' });
@@ -47,7 +47,7 @@ $(document).ready(function(){
     citySelector();
   }
 
-   $(".city-header-selector p").click(function(){
+   $(".city-header-selector p").bind(clickEventType, function(){
     citySelector();
    });
 
