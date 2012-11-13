@@ -32,7 +32,7 @@ $(document).ready(function(){
 
   $('#city_ul').bind('touchstart',function(){
       $("#city_ul ul").addClass('hover');
-  })
+  });
 
   function citySelector() {
     $("#overlay").toggle();
