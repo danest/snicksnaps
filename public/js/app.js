@@ -30,13 +30,13 @@ $(document).ready(function(){
   //   $("#city_container").css('height', '189px');
   // })
 
-  $('#city_ul').bind('touchstart',function(){
-      $("#city_ul ul").addClass('hover');
-  });
 
   function citySelector() {
     $("#overlay").toggle();
     $("#city_container").center().toggle();
+    $('#city_ul').bind('touchstart',function(){
+      $("#city_ul ul").addClass('hover');
+    });
     $('#city_items li').bind(clickEventType, function(){
       var city = $(this).text().replace(/\s+/g, '-').toLowerCase();
       console.log(city);
