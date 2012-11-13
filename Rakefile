@@ -128,7 +128,7 @@ DataMapper.finalize.auto_upgrade!
 
 cities = ['washingtondc','lasvegas', 'losangeles', 'seattle','sandiego','chicago', 'miami',
           'sfbay', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
-          'sacramento', 'austin', 'newyork', 'phoenix', 'hartford']
+          'sacramento', 'austin', 'newyork', 'phoenix', 'hartford', 'binghamton']
 
 cities.shuffle
 
