@@ -57,7 +57,22 @@ $(document).ready(function(){
     citySelector();
    });
 
-  console.log($.cookie('select_city'));
+  //console.log($.cookie('select_city'));
 
+  var a = window.location.href;
+  var n=a.split("/");
+  var current_url = n[n.length-1].split('?')[0];
+  console.log(current_url);
+
+  //n[n.length-1]
+  $("#nav li").each(function(item, elem){
+    var e = $(elem).find('a').attr('href').split('/');
+    var li_link = e[e.length-1];
+
+    console.log(current_url, li_link);
+    if(current_url === li_link){
+      $(elem).find('a').css('fontWeight','bold');
+    }
+  });
 
 });

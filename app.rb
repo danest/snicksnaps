@@ -43,7 +43,9 @@ end
 
 get '/:city/all' do
   city = request.cookies['select_city'] ||= 'san-francisco-bay'
-  @products = Product.all(:order => [:created_at.desc], :conditions => {:city => city, :category => "cars" }).paginate(:page => params[:page], :per_page => 30)
+  @products = Product.all(:order => [:created_at.desc], :conditions => {:city => city }).paginate(:page => params[:page], :per_page => 30)
+  # @products = Product.all(:conditions => {:city => city }, :offset => rand(Product.count),:limit => 30)
+
   erb :index
 end
 
