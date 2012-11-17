@@ -40,6 +40,7 @@ $(document).ready(function(){
     $('#city_items li').bind(clickEventType, function(){
       var city = $(this).text().replace(/\s+/g, '-').toLowerCase();
       console.log(city);
+      $("#city_ul ul").css('display','none');
       $.cookie('select_city', city, { expires: 365, path: '/' });
       window.location = '/'
     });

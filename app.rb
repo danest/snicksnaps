@@ -7,8 +7,8 @@ require 'sinatra/static_assets'
 require 'will_paginate'
 require 'will_paginate/data_mapper'  # or data_mapper/sequel
 
-DataMapper.setup(:default, "postgres://snicksnaps:secret@localhost/snicksnaps_production" || "sqlite:///#{Dir.pwd}/pinn.db")
-#DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db" || "postgres://snicksnaps:secret@localhost/snicksnaps_production")
+#DataMapper.setup(:default, "postgres://snicksnaps:secret@localhost/snicksnaps_production" || "sqlite:///#{Dir.pwd}/pinn.db")
+DataMapper.setup(:default, "sqlite:///#{Dir.pwd}/pinn.db" || "postgres://snicksnaps:secret@localhost/snicksnaps_production")
 
 class Product
   include DataMapper::Resource
