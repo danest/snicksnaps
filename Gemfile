@@ -21,4 +21,5 @@ gem 'unicorn'
 gem 'whenever', :require => false
 gem 'newrelic_rpm'
 gem "activesupport", :require => "active_support"
+gem 'racksh'
 
