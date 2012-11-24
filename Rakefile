@@ -40,7 +40,6 @@ DataMapper.finalize.auto_upgrade!
 
   #DataMapper.repository(:default).adapter.send(:open_connection).dispose
   #DataMapper.setup(:default, postgresql_conn )
-  Product.destroy
 
   def run_scrapper(category, url, city)
     # DataObjects::Pooling.pools.each do |pool|
