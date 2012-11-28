@@ -87,7 +87,6 @@ get '/:city/appliances' do
 end
 
 
-
 get '/:city/beauty' do
   city = request.cookies['select_city'] ||= 'san-francisco-bay'
   @products = Product.all(:order => [:created_at.desc], :conditions => {:city => city, :category => "beautyservices"}).paginate(:page => params[:page], :per_page => 30)
