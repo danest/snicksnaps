@@ -5,6 +5,7 @@ require 'json'
 require 'nokogiri'
 require 'open-uri'
 require 'json'
+require 'active_support/all'
 
 DataMapper.setup(:default, "postgres://snicksnaps:secret@localhost/snicksnaps_production" || "sqlite:///#{Dir.pwd}/pinn.db")
 
