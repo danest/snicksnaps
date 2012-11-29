@@ -57,7 +57,7 @@ DataMapper.finalize.auto_upgrade!
     # else
     #   puts "error not running SCRAPPER"
     # end
-    Product.all(:conditions => {:city => city, :created_at.gt => 1.week.ago }).destroy
+    #Product.all(:conditions => {:city => city, :created_at.gt => 1.week.ago }).destroy
 
     doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
