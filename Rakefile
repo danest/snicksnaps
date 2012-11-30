@@ -60,7 +60,6 @@ DataMapper.finalize.auto_upgrade!
     #Product.all(:conditions => {:city => city, :created_at.gt => 1.week.ago, :category => category }).destroy
     d_products = Product.all(:conditions => {:city => city, :created_at.lt => 1.day.ago, :category => category })
     d_products.destroy
-
     doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
     doc.css(".row").each do |item|
@@ -89,6 +88,7 @@ DataMapper.finalize.auto_upgrade!
           location = item.css('.itempn')[0].text.strip
           #puts location
           url = "#{item_link}"
+          sleep 2
           doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
 
           str =  doc.css('#userbody')[0].text
