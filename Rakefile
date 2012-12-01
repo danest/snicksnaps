@@ -131,7 +131,12 @@ DataMapper.finalize.auto_upgrade!
       end
     end
 
-cities = ['newyork','lasvegas', 'losangeles', 'seattle','sandiego','chicago', 'miami',
+
+# cities = ['newyork','lasvegas', 'losangeles', 'seattle','sandiego','chicago', 'miami',
+#           'sfbay', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
+#           'sacramento', 'austin', 'washingtondc', 'phoenix', 'hartford', 'binghamton']
+
+cities = ['newyork','losangeles', 'seattle','sandiego','chicago', 'miami',
           'sfbay', 'tampa', 'atlanta', 'dallas', 'minneapolis', 'boston',
           'sacramento', 'austin', 'washingtondc', 'phoenix', 'hartford', 'binghamton']
 
