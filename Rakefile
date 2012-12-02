@@ -58,9 +58,10 @@ DataMapper.finalize.auto_upgrade!
     #   puts "error not running SCRAPPER"
     # end
     #Product.all(:conditions => {:city => city, :created_at.gt => 1.week.ago, :category => category }).destroy
-    #d_products = Product.all(:conditions => {:city => city, :created_at.lt => 1.day.ago, :category => category })
-    #d_products.destroy
-    doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby'))
+    d_products = Product.all(:conditions => {:city => city, :created_at.lt => 1.day.ago, :category => category })
+    d_products.destroy
+    begin
+    doc = Nokogiri::HTML(open(url, 'User-Agent' => 'ruby',:read_timeout => 300))
 
     doc.css(".row").each do |item|
     #puts item
@@ -129,6 +130,13 @@ DataMapper.finalize.auto_upgrade!
               end
             end
           end
+      end
+      rescue Timeout::Error
+        print "Timeout::Error: #{$!}\n"
+        next
+      rescue
+        print "Connection failed: #{$!}\n"
+        next
       end
     end
 
