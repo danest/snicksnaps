@@ -133,10 +133,10 @@ DataMapper.finalize.auto_upgrade!
       end
       rescue Timeout::Error
         print "Timeout::Error: #{$!}\n"
-        next
+
       rescue
         print "Connection failed: #{$!}\n"
-        next
+
       end
     end
 
